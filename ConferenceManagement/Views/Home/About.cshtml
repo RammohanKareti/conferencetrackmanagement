@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+           This tool accepts the file which contains list of talks and their respective duration in minutes.
+            And Schedules them <b>(Randomly Each Time)</b> you upload the file.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>Usage</h2>
+        <p>Upload a valid file with valid data at <a class="btn btn-default" href="/Home">Home</a> page. Any talks data without valid data will be ignored</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Design Details</h2>
+        <p>There are four main components.</p>
+        <ul>
+            <li>
+                <b>Session Constraint</b>
+            </li>
+            <li>
+                <b>File Parser</b>
+            </li>
+            <li>
+                <b>Track</b>
+                
+            </li>
+            <li>
+                <b>
+                    Scheduler
+                </b>
+                
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <section>
+        <h2>
+            Session Constraint
+        </h2>
+        <p>
+            This component is responsible for loading the conference constraints.
+        </p>
+    </section>
+    <section>
+        <h2>
+            File Parser
+        </h2>
+        <p>
+            File Parser is responsible for parsing the file and generate talks collection that are to be scheduled.
+        </p>
+        <p>
+            Parser will read the input stream line by line using stream reader.
+            It will start parsing by reading last three characters of the talk.
+            If last three characters match with constant <b>(min)</b> then it has number of minutes else it is lightning talk.
+            Continue to parsing till you reach space and get the minutes.
+        </p>
+        <p>
+            At last, finally read till end using string builder to get the name of the talk and build talk object.
+        </p>
+    </section>
+    <hr />
+    <section>
+        <h2>
+            Track
+        </h2>
+        <p>
+            Track component is responsible for fitting the talks into the sessions. Each session is just collection of the talks with in given time bounds.
+        </p>
+        <p>
+            It will load the constraints on initialization, and have two main methods exposed.
+            One of them is to add talk to track (morning or afternoon).
+            Another is to remove the talk from Track (for adjustments).
+            Add method will check possibility of fitting the given talk into any of the available sessions.
+        </p>
+    </section>
+    <hr />
+    <section>
+        <h2>
+            Scheduler
+        </h2>
+        <p>
+            Scheduler will be supplied with talks and tracks
+        </p>
+        <p>
+            <h3>
+                Algorithm.
+            </h3>
+            <ul>
+                <li>
+                   <b>Step 1: </b> Order the all the talks descending order by their duration
+                </li>
+                <li>
+                    <b>Step 2: </b> Choose randomly track and session and fill the slots Iteratively and mark talk as scheduled
+                </li>
+                <li>
+                    <b>Step 3: </b> In the end check if any of the talks are remaining, Reset the talks and go to <b>Step 1</b>
+                </li>
+                
+            </ul>
+        </p>
+    </section>
+    <hr />
+    <section>
+        <h3>Notes.</h3>
+        <ul>
+            <li>This algorithm does not offer best fit but offers random scheduling, and is not perfect and optimal solution for bigger numbers. As it check all the possibilities on worst case which is O(n!) 
+            </li>
+            <li>
+                Due to time constraints I was not able to add unit test cases.
+            </li>
+        </ul>
+    </section>
+
+</div>

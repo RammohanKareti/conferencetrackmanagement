@@ -1,0 +1,14 @@
+﻿@model IEnumerable<ConferenceManagement.Models.SessionTalk>
+
+        @foreach (var talk in Model)
+        {
+            <tr>
+                <td>@talk.TimeString</td>
+                <td>@talk.TalkName</td>
+                <td>
+                    @talk.Duration.TotalMinutes (mins)
+                </td>
+            </tr>
+        }
+
+

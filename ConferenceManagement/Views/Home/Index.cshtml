@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h3>Hello, Welcome to Conference Management Tool.</h3>
+</div>
+
+<p class="text-danger">@ViewBag.Message</p>
+<div class="row">
+    <div class="container">
+        <form action="/Home/Schedule" method="post" enctype="multipart/form-data">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="file" name="inputFile" class="file">
+                    <div class="input-group col-xs-12">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-upload"></i></span>
+                        <input type="text" class="form-control input-lg" disabled placeholder="Upload Your File">
+                        <span class="input-group-btn">
+                            <button class="browse btn btn-primary input-lg" type="button"><i class="glyphicon glyphicon-search"></i> Browse</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn-upload btn btn-success input-lg"><i class="glyphicon glyphicon-upload"></i> Upload</button>
+                    </span>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="container">
+        <div class="col-md-6">
+            <h4> Click <a class="btn btn-default" href="/Home/About">here</a> to see the implementation details.</h4>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(function () {
+            $(document).on('click', '.browse', function () {
+                var file = $(this).parent().parent().parent().find('.file');
+                file.trigger('click');
+            });
+            $(document).on('change', '.file', function () {
+                $(this).parent().find('.form-control').val($(this).val().replace(/C:\\fakepath\\/i, ''));
+            });
+        });
+    </script>
+    }

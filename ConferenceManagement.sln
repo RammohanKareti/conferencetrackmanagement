@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenceManagement", "ConferenceManagement\ConferenceManagement.csproj", "{5342766E-EB32-42F1-B173-D4AC4AF121C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConferenceManagement.Tests", "ConferenceManagement.Tests\ConferenceManagement.Tests.csproj", "{ED45FBE9-B5E8-4280-9539-35DA442C5035}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5342766E-EB32-42F1-B173-D4AC4AF121C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5342766E-EB32-42F1-B173-D4AC4AF121C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5342766E-EB32-42F1-B173-D4AC4AF121C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5342766E-EB32-42F1-B173-D4AC4AF121C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED45FBE9-B5E8-4280-9539-35DA442C5035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED45FBE9-B5E8-4280-9539-35DA442C5035}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED45FBE9-B5E8-4280-9539-35DA442C5035}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED45FBE9-B5E8-4280-9539-35DA442C5035}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBA31D89-FC3C-4AD1-BDA3-4B037F1F6F12}
+	EndGlobalSection
+EndGlobal
